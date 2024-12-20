@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Job and Internship Finder</title>
+    <script>
+        function validateForm() {
+            const query = document.getElementById("query").value;
+            if (query.trim() === "") {
+                alert("Search query cannot be empty.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to the Job and Internship Finder</h1>
+    <form action="/search" method="post" onsubmit="return validateForm()">
+        <label for="query">Search for Jobs or Internships:</label>
+        <input type="text" id="query" name="query" required>
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>
